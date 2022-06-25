@@ -18,6 +18,19 @@ MongoClient.connect(dbConnectionString)
         collection = db.collection('todotasks')
     })
 
+app.set('view engine', ejs)
+//public is where it goes to get what we need ie css if anyone accesses base/path
+app.use(express.static('public'))
+//helping us handle urls
+app.use(express.urlencoded({extended:true}))
+//will allow us to read the data that has been parsed
+app.use(express.json())
+//cross-origin resource sharing 
+app.use(cors())
+
+
+
+//port 8004
 app.listen(process.env.PORT || PORT, () => {
     console.log(`Server is running on port 8004`)
 })
