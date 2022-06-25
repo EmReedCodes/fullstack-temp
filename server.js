@@ -17,7 +17,7 @@ MongoClient.connect(dbConnectionString)
         collection = db.collection('todotasks')
     })
 
-app.set('view engine', ejs)
+app.set('view engine', 'ejs')
 //public is where it goes to get what we need ie css if anyone accesses base/path
 app.use(express.static('public'))
 //helping us handle urls
