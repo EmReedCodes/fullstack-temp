@@ -28,6 +28,13 @@ app.use(express.json())
 //cross-origin resource sharing 
 app.use(cors())
 
+app.get('/', async (req, res) => {
+    try{
+        res.render('index.ejs')
+    }catch{
+        res.status(500).send({message: error.message})
+    }
+})
 
 
 //port 8004
